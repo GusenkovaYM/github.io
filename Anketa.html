@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <script>
+        function print()
+        {
+        var a = localStorage.getItem("a");
+        var b = localStorage.getItem("b");
+        var c = localStorage.getItem("c");
+        var d = localStorage.getItem("d");
+        var e = localStorage.getItem("e");
+        var dr = localStorage.getItem("dr");
+        var flag = localStorage.getItem("flag");
+        var text1 = document.getElementById("text1");
+        var text2 = document.getElementById("text2");
+        console.log(a+" "+b+" "+c+" "+d+" "+e);
+        document.getElementById("a1").value=a;
+        document.getElementById("b1").value=b;
+        document.getElementById("c1").value=c;
+        document.getElementById("d1").value=d;
+        document.getElementById("e1").value=e;
+        document.getElementById("dr1").value=dr;
+        
+        if (flag == 1)
+        {
+                        text1.style.display = "block";
+                    }
+                    else
+                    {
+                        text1.style.display = "none";
+                    }
+        
+        if (dr1 != 0)
+            {
+                text2.style.display = "block";
+            }
+        else
+            {
+                text2.style.display = "none";
+            }
+                
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+    <main>
+            <h1>Вы успешно зарегистрировались на конференцию!</h1>
+            <input type="text" id="a1">
+            <input type="text" id="b1">
+            <input type="text" id="c1">
+            <input type="text" id="d1">
+            <div>
+                <input type="date" id="dr1" style="">
+            </div>
+            <div id="text1" style="display:none">
+                <input type="text" id="e1">
+            </div>
+           
+            <script>
+                print();
+            </script>
+           
+            
+    </main>
+    
+</body>
+</html>
