@@ -7,7 +7,7 @@ ul {
 }
 li {
     float: right;
-    border-right: 1px solid #bbb;
+    border-left: 1px solid #bbb;
 }
 li a {
     display: block;
@@ -24,5 +24,5 @@ li a:hover:not(.active) {
     background-color: #4CAF50;
 }
 li:last-child {
-    border-right: none;
+  <!--  border-right: none;  -->
 }
