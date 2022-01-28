@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конференция</title>
+    <script>
+      function myF(){
+          var a = document.getElementById("FIO").value;
+          var b = document.getElementById("tel").value; 
+          var c = document.getElementById("email").value; 
+          var d = document.getElementById("section").value;
+          var e = document.getElementById("report").value;
+          var dr = document.getElementById("date").value;
+          localStorage.setItem("a",a);
+          localStorage.setItem("b",b);
+          localStorage.setItem("c",c);
+          localStorage.setItem("d",d);
+          localStorage.setItem("e",e);
+          localStorage.setItem("dr",dr)
+          window.location = "anketa.html";
+      }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+    <main>
+        <form action="Anketa.html">
+            
+              <h1>Регистрация на конференцию</h1>
+              <p>Пожалуйста заполните анкету для участия в конференции</p>
+              <div>
+                <label for="FIO"><b>Фамилия Имя Отчество*</b></label>
+                <br>
+                <input type="text" name="FIO" id="FIO" pattern="[А-Я][а-я]+[ ][А-Я][а-я]+[ ][А-Я][а-я]+" size="40" placeholder="Например: Иванов Иван Иванович"
+                required>
+              </div>
+              <div>
+                <label for="tel"><b>Телефон*</b></label>
+                <br>
+                <input type="tel" name="tel" id="tel" placeholder="+7" pattern="[+7][0-9]+" maxlength="12" minlength="12" size="40" placeholder="+7ХХХХХХХХХ"required>
+              </div>
+              <div>
+                <label for="email"><b>E-mail*</b></label>
+                <br>
+                <input type="email" name="email" id="email" required>
+              </div>
+              <div>
+                <label for="section"><b>Выберите секции конференции*</b></label>
+                <br>
+                <select name="section" id="section" required>
+                    <option disabled selected value> </option>
+                    <option value="Математика">Математика</option>
+                    <option value="Физика">Физика</option>
+                    <option value="Информатика">Информатика</option>
+                </select>
+              </div>
+              <div>
+                <label for="date"><b>Дата рождения</b></label>
+                <br>
+                <input type="date" name="date" id="date" pattern="[0-9]+">
+              </div>
+              <div>
+                <label for="doklad"><b>Участие с докладом</b></label>
+                <input type="checkbox" name="doklad" id="doklad"
+                onclick="myFunction()">
+              </div>
+              
+              <script>
+                function myFunction()
+                {
+                    var checkBox = document.getElementById("doklad");
+                    var text = document.getElementById("text");
+                    if (checkBox.checked == true)
+                    {
+                        text.style.display = "block";
+                        var flag = 1;
+                        localStorage.setItem("flag",flag);
+                    }
+                    else
+                    {
+                        text.style.display = "none";
+                        var flag = 0;
+                        localStorage.setItem("flag",flag);
+                    }
+                }
+                </script>
+              <div id="text" style="display:none">
+                <label for="report"><b>Введите тему доклада</b></label>
+                <br>
+                <textarea name="report" id="report" cols="40" rows="3"></textarea>
+              </div>
+              <div>
+                  *поля обязательные для заполнения
+              </div>
+              
+              <div>
+                <input type="button" onClick="myF()" value="Зарегистрироваться">
+                
+              </div>
+                          
+          </form>
+ 
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
