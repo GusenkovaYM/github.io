@@ -6,6 +6,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Конференция</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+		h1{color: #333;
+			font-family: verdana;
+    	font-size: 200%;
+			text-align: center;
+			padding: 30px;}
+    form{color: #333;
+      font-family: verdana;
+      text-align: center;
+      background-color: #a1faa4;
+      width: 700px;
+      margin: 0 auto;
+    }
+    input[type=text], input[type=email], input[type=date], input[type=submit]
+    {
+      background-color: #baf8bc;
+			font-family: verdana;
+			font-size: 24px;
+			border: 1px solid #bbb;
+			color: white;
+			padding: 15px 32px;
+    	text-decoration: none;
+    	text-align: center;
+			width: 500px;
+      cursor: pointer;
+    }
+    select {
+      width: 560px;
+      padding: 15px 32px;
+      border: 1px solid #bbb;
+      background-color: #baf8bc;
+      font-family: verdana;
+			font-size: 24px;
+      text-align: center;
+    }
+    textarea{
+      background-color: #baf8bc;
+			font-family: verdana;
+			font-size: 24px;
+			border: 1px solid #bbb;
+      width: 560px;
+    }
+    input[type=submit]{
+      background-color: #4CAF50;
+			font-family: verdana;
+			font-size: 24px;
+			border: 1px solid #bbb;
+			color: white;
+      text-align: center;
+			width: 560px;
+    }
+    input:hover {
+      background-color: #74d377; 
+    	color: #4CAF50;
+		}	
+  </style>
+  
   
 </head>
 <body>
@@ -15,17 +72,10 @@
       <li><a href="2.html">Список выступающих</a></li>
       <li><a href="3.html">Расписание</a></li>
       <li class="active"><a href="index.html">Регистрация участников</a></li>
-
     </ul>
-    
-      
-      
-      
-      
-    
   </header>
   <main>
-    <form action="Anketa.html">
+    <form action="Anketa.html" id="target">
       <h1>Регистрация на конференцию</h1>
       <p>Пожалуйста заполните анкету для участия в конференции</p>
       <div>
@@ -34,9 +84,82 @@
         <input type="text" name="FIO" id="FIO" pattern="[А-Я][а-я]+[ ][А-Я][а-я]+[ ][А-Я][а-я]+" size="40"
         placeholder="Например: Иванов Иван Иванович" required>
       </div>
-              
+      <div>
+        <label for="tel"><b>Телефон*</b></label>
+        <br>
+        <input type="text" name="tel" id="tel" placeholder="+7" pattern="[+7][0-9]+" maxlength="12" minlength="12" size="40" placeholder="+7ХХХХХХХХХ"required>
+      </div>
+      <div>
+        <label for="email"><b>E-mail*</b></label>
+        <br>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div>
+        <label for="section"><b>Выберите секции конференции*</b></label>
+        <br>
+        <select name="section" id="section" class="select1" required>
+            <option disabled selected value> </option>
+            <option value="Математика">Математика</option>
+            <option value="Физика">Физика</option>
+            <option value="Информатика">Информатика</option>
+        </select>
+      </div>
+      <div>
+        <label for="date"><b>Дата рождения</b></label>
+        <br>
+        <input type="date" name="date" id="date" pattern="[0-9]+">
+      </div>
+      <div>
+        <label for="doklad"><b>Участие с докладом</b></label>
+        <input type="checkbox" name="doklad" id="doklad"
+        onclick="myFunction()">
+      </div> 
+      <script>
+      function myFunction()
+        {
+            var checkBox = document.getElementById("doklad");
+            var text = document.getElementById("text");
+            if (checkBox.checked == true)
+            {
+                text.style.display = "block";
+                var flag = 1;
+                localStorage.setItem("flag",flag);
+            }
+            else
+            {
+                text.style.display = "none";
+                var flag = 0;
+                localStorage.setItem("flag",flag);
+            }
+        }
+        </script>
+      <div id="text" style="display:none">
+        <label for="report"><b>Введите тему доклада</b></label>
+        <br>
+        <textarea name="report" id="report" cols="40" rows="3"></textarea>
+      </div>
+      <div>
+          *поля обязательные для заполнения
+      </div>
+      <input type="submit" value="ЗАРЕГЕСТРИРОВАТЬСЯ" onclick="functionSend()">       
     </form>
- 
+    <script>
+      functionSend ()
+      {
+          var a = document.getElementById("FIO").value;
+          var b = document.getElementById("tel").value; 
+          var c = document.getElementById("email").value; 
+          var d = document.getElementById("section").value;
+          var e = document.getElementById("report").value;
+          var dr = document.getElementById("date").value;
+          localStorage.setItem("a",a);
+          localStorage.setItem("b",b);
+          localStorage.setItem("c",c);
+          localStorage.setItem("d",d);
+          localStorage.setItem("e",e);
+          localStorage.setItem("dr",dr);
+      }
+    </script>
   </main>
 </body>
 </html>

@@ -6,6 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Расписание</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+		#annotacia   {color: #333;
+			font-family: verdana;
+    		font-size: 100%;
+			text-align: center;
+			padding: 30px;}
+        button {background-color: #4CAF50;
+			font-family: verdana;
+			font-size: 16px;
+			border: 1px solid #bbb;
+			color: white;
+			display: inline-block;
+			padding: 15px 32px;
+    		text-decoration: none;
+    		text-align: center;
+			width: 200px;	
+		}
+		button:hover {background-color: #333; /* Green */
+    		color: #4CAF50;
+		}
+        #t1, #t2, #t3, #t4, #t5, #t6{
+            background-color: #e68f1e;
+            font-family: verdana;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            width: 180px;
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 500px;         
+        }
+        #r1, #r2, #r3, #r4, #r5, #r6{
+            background-color: white;
+            font-family: verdana;
+            color: #333;
+            text-align: left;
+            padding: 10px;
+            width: 180px;
+            display: inline-block;
+            margin-top: 10px;
+        }		
+    </style>
+    <script>
+    function rasp1()
+    {
+        document.getElementById("oct25").style.display = "block";
+        document.getElementById("oct26").style.display = "none";
+    }
+    function rasp2()
+    {
+        document.getElementById("oct26").style.display = "block";
+        document.getElementById("oct25").style.display = "none";
+    }
+    </script>
+
 </head>
 <body>
     <header>
@@ -14,8 +69,60 @@
             <li><a href="2.html">Список выступающих</a></li>
             <li class="active"><a href="3.html">Расписание</a></li>
             <li><a href="index.html">Регистрация участников</a></li>
-      
           </ul>
     </header>
+    <div id="annotacia">
+        <p6>
+            В течение двух дней конференции запланировано обсуждение ключевых вопросов математики, физики и информатики.
+        </p6>
+    </div>
+        <button id="butt1" onclick="rasp1()" style="margin-left: 500px;">25 октября</button>
+        <button id="butt2" onclick="rasp2()">26 октября</button>
+        <div id="oct25">
+            <div id="t1">
+                11:00 - 12:30
+            </div>
+            <div id="r1">
+                Физика
+            </div>
+            <br>
+            <div id="t2">
+                13:00 - 14:30
+            </div>
+            <div id="r2">
+                Физика
+            </div>
+            <br>
+            <div id="t3">
+                15:00 - 16:30
+            </div>
+            <div id="r3">
+                Математика
+            </div>
+        </div>
+        <div id="oct26" style="display:none">
+            <div id="t4">
+                10:30 - 12:00
+            </div>
+            <div id="r4">
+                Математика
+            </div>
+            <br>
+            <div id="t5">
+                12:30 - 14:00
+            </div>
+            <div id="r5">
+                Информатика
+            </div>
+            <br>
+            <div id="t6">
+                14:30 - 16:00
+            </div>
+            <div id="r6">
+                Информатика
+            </div>
+        </div>
+
+    
 </body>
 </html>

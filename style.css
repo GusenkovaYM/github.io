@@ -15,6 +15,7 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
     text-align: center;
+    font-family: verdana;
     
 }
 li a:hover:not(.active) {
@@ -24,5 +25,6 @@ li a:hover:not(.active) {
     background-color: #4CAF50;
 }
 li:last-child {
-  <!--  border-right: none;  -->
+    border-right: none;
 }
+body {background-color: powderblue;}

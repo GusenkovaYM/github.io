@@ -9,17 +9,24 @@
 	<style>
 		body {background-color: powderblue;}
 		div   {color: #333;
-		font-family: verdana;
+			font-family: verdana;
     		font-size: 300%;
-		text-align: center;
-		padding: 30px;}
-		button {background-color: #4CAF50;
-		display: block;
-		padding: 14px 16px;
+			text-align: center;
+			padding: 30px;}
+		.button {background-color: #4CAF50;
+			font-family: verdana;
+			font-size: 24px;
+			border: 1px solid #bbb;
+			color: white;
+			display: inline-block;
+			padding: 15px 32px;
     		text-decoration: none;
     		text-align: center;
-}
-		
+			width: 500px;	
+		}
+		.button:hover {background-color: #333; /* Green */
+    		color: #4CAF50;
+		}		
 	</style>
 </head>
 <body>
@@ -29,7 +36,6 @@
             <li><a href="2.html">Список выступающих</a></li>
             <li><a href="3.html">Расписание</a></li>
             <li><a href="index.html">Регистрация участников</a></li>
-      
           </ul>
     </header>
 	<main>
@@ -37,15 +43,16 @@
 			<p1>Конференция </p1>
 		</div>
 		<div>
-			<p2>25 - 27 октября 2022</p2>
+			<p2>25 - 26 октября 2022</p2>
 		</div>
 		<div>
 			<p2>#ВыставкиКонференцииЭффективноБезопасно</p2>
 		</div>
-		<form action="index.html">
-			<button>Регистрация на конференции</button>
-		</form>
-
+		<div>
+			<form action="index.html">
+				<button class="button">Регистрация на конференции</button>
+			</form>	
+		</div>	
 	</main>
 </body>
 </html>
